@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistem za upravljanje smučišča</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Spletni nakup in validacija smučarske karte</h1>
+    <p>Sistem za upravljanje smučarskega središča</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Prijava uporabnika</h2>
+      <label>Ime uporabnika</label>
+      <input id="ime" type="text" placeholder="npr. Tim" />
+      <label>E-pošta</label>
+      <input id="email" type="email" placeholder="npr. tim@email.com" />
+      <button onclick="prijava()">Nadaljuj kot uporabnik</button>
+      <button class="secondary" onclick="gost()">Nadaljuj kot gost</button>
+      <p id="prijavaStatus" class="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>2. Izbira smučarske karte</h2>
+      <label>Vrsta karte</label>
+      <select id="vrstaKarte" onchange="posodobiCeno()">
+        <option value="Dnevna karta" data-cena="42">Dnevna karta - 42 €</option>
+        <option value="Večdnevna karta" data-cena="115">Večdnevna karta - 115 €</option>
+        <option value="Sezonska karta" data-cena="390">Sezonska karta - 390 €</option>
+      </select>
+      <label>Medij za dostop</label>
+      <input id="medij" type="text" placeholder="npr. RFID-12345" />
+      <p>Povzetek naročila: <strong id="povzetek">Dnevna karta - 42 €</strong></p>
+      <button onclick="pripraviNakup()">Pripravi nakup</button>
+      <p id="nakupStatus" class="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>3. Plačilo</h2>
+      <label>Način plačila</label>
+      <select id="placilo">
+        <option>Kreditna kartica</option>
+        <option>PayPal</option>
+        <option>Bančno nakazilo</option>
+      </select>
+      <button onclick="izvediPlacilo()">Potrdi in plačaj</button>
+      <p id="placiloStatus" class="status"></p>
+    </section>
+
+    <section class="card">
+      <h2>4. Validacija na rampi</h2>
+      <label>Izberi žičnico</label>
+      <select id="zicnica">
+        <option value="odprta">Sedežnica Stolp - obratuje</option>
+        <option value="zaprta">Vlečnica Bor - ne obratuje</option>
+        <option value="nevarnost">Gondola Vrh - nevarnost na območju</option>
+      </select>
+      <button onclick="validirajKarto()">Validiraj karto</button>
+      <p id="validacijaStatus" class="status"></p>
+    </section>
+
+    <section class="card wide">
+      <h2>Dnevnik dogodkov</h2>
+      <ul id="dnevnik"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>RIS seminarska naloga - 2. del | Spletna demonstracija primera uporabe</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
