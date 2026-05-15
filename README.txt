@@ -1,9 +1,13 @@
 Sistem za upravljanje smucarskega sredisca - spletna verzija
 
-ZAGON:
+ZAGON v githubu:
 1. Odpri mapo SmucisceRIS_web.
 2. Dvoklikni index.html.
 3. Aplikacija se odpre v brskalniku.
+
+ZAGON:
+1. Odpri link:
+https://traktor3478.github.io/SmucisceRIS/
 
 Datoteke:
 - index.html  - glavna spletna stran
